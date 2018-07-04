@@ -1,0 +1,86 @@
+.NavbarItems {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: row;
+  align-items: right;
+  height: 100%;
+}
+
+.NavigationItem a {
+  text-decoration: none;
+  border: 1px solid #1e277c;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: #3547eb;
+  color: white;
+}
+
+.NavigationItem {
+  margin: 50px 100px 10px auto;
+  width: 5%;
+  font-size: 20px;
+}
+
+.NavigationItem a:hover {
+  color: #c8c7f7;
+}
+
+.RegisterButton {
+  font-size: 20px;
+  margin: 30px 0 100px 0;
+}
+
+.RegisterButton a {
+  text-decoration: none;
+  border: 1px solid #1e277c;
+  padding: 10px 40px;
+  border-radius: 4px;
+  background-color: #3547eb;
+  color: white;
+}
+
+.RegisterButton a:hover {
+  color: #c8c7f7;
+}
+
+.FullDiv {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.LandingPage {
+  background: rgb(241, 227, 243);
+  height: 80vh;
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.Caption {
+  font-weight: 700;
+  font-size: 4rem;
+  color: #3547eb;
+  margin: 0;
+  padding: 0;
+}
+
+.CaptionHint {
+  font-size: 2rem;
+  color: #3547eb;
+  margin: 0;
+  padding: 0;
+}
+
+.Nav-Brand {
+  background-image: url("./diaflixLogo.png");
+  width: 10px;
+  height: auto;
+}
