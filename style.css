@@ -29,7 +29,7 @@
 
 .RegisterButton {
   font-size: 20px;
-  margin: 30px 0 100px 0;
+  margin: 30px auto 100px auto;
 }
 
 .RegisterButton a {
@@ -43,6 +43,22 @@
 
 .RegisterButton a:hover {
   color: #c8c7f7;
+}
+
+.FinalLogin {
+  font-size: 20px;
+  text-align: center;
+}
+
+.FinalLogin a {
+  text-decoration: none;
+  border: 1px solid #1e277c;
+  padding: 8px 15px;
+  border-radius: 4px;
+  background-color: #3547eb;
+  color: white;
+  margin: 30px 15px 15px 15px;
+  display: block;
 }
 
 .FullDiv {
@@ -83,4 +99,36 @@
   background-image: url("./diaflixLogo.png");
   width: 10px;
   height: auto;
+}
+
+.BorderDiv {
+  border: 3px solid #3547eb;
+  border-radius: 2px;
+  padding: 3rem 2rem;
+}
+
+.Input {
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.InputElement {
+  outline: none;
+  border: 2px solid #3547eb;
+  border-radius: 2px;
+  background-color: white;
+  font: inherit;
+  padding: 6px 10px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  color: rgb(121, 116, 116);
+}
+
+.LoginHeading {
+  padding: 0 15px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #3547eb;
 }
