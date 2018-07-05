@@ -1,13 +1,4 @@
-.NavbarItems {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-flow: row;
-  align-items: right;
-  height: 100%;
-}
-
+/* Navigation */
 .NavigationItem a {
   text-decoration: none;
   border: 1px solid #1e277c;
@@ -18,7 +9,7 @@
 }
 
 .NavigationItem {
-  margin: 50px 100px 10px auto;
+  margin: 0px 100px 10px auto;
   width: 5%;
   font-size: 20px;
 }
@@ -27,6 +18,12 @@
   color: #c8c7f7;
 }
 
+.Nav-Brand {
+  width: 150px;
+  padding: 20px 0 0 20px;
+}
+
+/* Registration */
 .RegisterButton {
   font-size: 20px;
   margin: 30px auto 100px auto;
@@ -45,6 +42,7 @@
   color: #c8c7f7;
 }
 
+/* Login */
 .FinalLogin {
   font-size: 20px;
   text-align: center;
@@ -61,25 +59,14 @@
   display: block;
 }
 
-.FullDiv {
-  width: 80%;
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: left;
+.LoginHeading {
+  padding: 0 15px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #3547eb;
 }
 
-.LandingPage {
-  background: rgb(241, 227, 243);
-  height: 80vh;
-  width: 100%;
-  background-size: cover;
-  background-position: 50%;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
+/* Caption */
 .Caption {
   font-weight: 700;
   font-size: 4rem;
@@ -95,10 +82,24 @@
   padding: 0;
 }
 
-.Nav-Brand {
-  background-image: url("./diaflixLogo.png");
-  width: 10px;
-  height: auto;
+/* Landing Page */
+.LandingPage {
+  background: rgb(241, 227, 243);
+  height: 80vh;
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.FullDiv {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
 }
 
 .BorderDiv {
@@ -107,6 +108,7 @@
   padding: 3rem 2rem;
 }
 
+/* Form and Input */
 .Input {
   width: 100%;
   padding: 15px;
@@ -123,12 +125,5 @@
   display: block;
   width: 100%;
   box-sizing: border-box;
-  color: rgb(121, 116, 116);
-}
-
-.LoginHeading {
-  padding: 0 15px;
-  font-size: 20px;
-  font-weight: 400;
-  color: #3547eb;
+  color: rgb(85, 80, 80);
 }
