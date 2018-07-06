@@ -18,7 +18,7 @@
   <main class="LandingPage">
     <div class="FullDiv">
       <div>
-        <h2 class="CaptionHint">Your registration was successfull.</h2>
+        <h2 class="CaptionHint">Your registration was successful.</h2>
         <br />
         <p class="RegisterButton ">
           <a href="login.php">
