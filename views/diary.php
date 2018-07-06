@@ -1,3 +1,5 @@
+<?php require "../src/database.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +25,16 @@
   <main class="LandingPage">
     <div class="FullDiv">
       <div>
-        <p>Your diary...</p>
+      <?php $entries = fetchEntries(); ?>
+      <?php foreach ($entries as $entry): ?>
+        <h1>
+          <?php echo $entry["title"]; ?>
+        </h1>
+        <p>
+          <?php echo $entry["entry"]; ?>
+        </p>
+        <br />
+      <?php endforeach; ?>
       </div>
     </div>
   </main>
