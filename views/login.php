@@ -29,7 +29,7 @@
             <input type="password" name="your password" placeholder="password" class="InputElement">
           </div>
           <div class="FinalLogin">
-            <a href="diary.php">
+            <a href="entries.php">
               Einloggen
             </a>
           </div>
