@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__ . "/../autoload.php";
+
 $path = $_SERVER['PATH_INFO'];
 
 $routes = [
