@@ -1,4 +1,12 @@
-<?php require "../database.php"; ?>
+<?php
+
+  require __DIR__ . "/../autoload.php";
+  require __DIR__ . "/../database.php";
+
+  $post = new App\Entries\EntryController();
+  $entries = $post->fetchEntries($pdo);
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +33,6 @@
   <main class="LandingPage">
     <div class="FullDiv">
       <div>
-      <?php $entries = fetchEntries(); ?>
       <?php foreach ($entries as $entry): ?>
         <h1>
           <?php echo $entry["title"]; ?>
