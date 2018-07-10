@@ -1,18 +1,12 @@
 <?php
 
-use PDO;
+namespace App\Entries;
 
 class EntryController
 {
-    public $pdo;
-    public function __construct(PDO $pdo)
+    function fetchEntries($pdo)
     {
-        $this->pdo = $pdo;
-    }
-
-    public function showEntries()
-    {
-        $entries = $pdo->query("SELECT * FROM `entries`");
-        return $entries;
+        $allEntries = new EntryModel($pdo);
+        return $allEntries->getAllEntries();
     }
 }
