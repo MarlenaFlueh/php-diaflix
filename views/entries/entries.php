@@ -3,7 +3,7 @@
 <body class="LandingPage">
   <header>
     <nav>
-      <a href="index"><img src="../img/diaflix.png" alt="diaflix" class="Nav-Brand"></a>
+      <a href="index"><img src="../../public/img/diaflix.png" alt="diaflix" class="Nav-Brand"></a>
       <div class="NavigationItem">
         <a href="index">
           Logout

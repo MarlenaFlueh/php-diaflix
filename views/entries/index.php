@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
-  <title>diaflix</title>
-</head>
+<?php include __DIR__ . "/../layout/header.php"; ?>
 
 <body class="LandingPage">
   <header>
     <nav>
-      <a href="index"><img src="img/diaflix.png" alt="diaflix" class="Nav-Brand"></a>
+      <a href="index"><img src="../../public/img/diaflix.png" alt="diaflix" class="Nav-Brand"></a>
       <div class="NavigationItem">
         <a href="login">
           Login
