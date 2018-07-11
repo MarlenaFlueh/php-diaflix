@@ -11,7 +11,7 @@
       <div class="BorderDiv">
         <form>
           <div>
-            <p class="LoginHeading">Einloggen</p>
+            <p class="LoginHeading">Login</p>
           </div>
           <div class="Input">
             <input type="text" name="your username" placeholder="username" class="InputElement">
@@ -21,7 +21,7 @@
           </div>
           <div class="FinalLogin">
             <a href="entries">
-              Einloggen
+              Login
             </a>
           </div>
         </form>

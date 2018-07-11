@@ -11,7 +11,7 @@
       <div class="BorderDiv">
         <form>
           <div>
-            <p class="LoginHeading">Registrieren</p>
+            <p class="LoginHeading">Registration</p>
           </div>
           <div class="Input">
             <input type="text" name="prename" placeholder="prename" class="InputElement">
@@ -30,11 +30,11 @@
           </div>
           <div class="Input">
             <input type="radio" name="radio">
-            <label for="radio">AGB akzeptieren</label>
+            <label for="radio">I agree with the conditions</label>
           </div>
           <div class="FinalLogin">
             <a href="registerSuccess">
-              Registrieren
+              Register
             </a>
           </div>
         </form>

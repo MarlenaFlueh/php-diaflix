@@ -13,7 +13,7 @@
         <br />
         <p class="RegisterButton ">
           <a href="login">
-            login now
+            Login now
           </a>
         </p>
       </div>
