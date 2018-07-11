@@ -1,37 +1,25 @@
 <?php
 
+require __DIR__ . "/../database.php";
 require __DIR__ . "/../autoload.php";
 
 $path = $_SERVER['PATH_INFO'];
 
-$routes = [
-    '/index' => [
-        'controller' => 'userController',
-        'method' => 'index'
-    ],
-    '/login' => [
-        'controller' => 'userController',
-        'method' => 'login'
-    ],
-    '/register' => [
-        'controller' => 'userController',
-        'method' => 'register'
-    ],
-    '/registerSuccess' => [
-    'controller' => 'userController',
-    'method' => 'showSuccess'
-    ],
-    '/entries' => [
-        'controller' => 'entryController',
-        'method' => 'showEntries'
-    ]
-];
-
-if (isset($routes[$path])) {
-    $route = $routes[$path];
-    $activeController = $route['controller'];
-    $method = $route['method'];
-    $activeController->$method();
+if ($path == "/entries") {
+  $controller = new App\Entries\EntryController();
+ $controller->fetchEntries($pdo);
+} elseif ($path == "/index") {
+  $controller = new App\Entries\EntryController();
+  $controller->index();
+} elseif ($path == "/login") {
+  $controller = new App\Users\UserController();
+  $controller->login();
+} elseif ($path == "/register") {
+  $controller = new App\Users\UserController();
+  $controller->registered();
+} elseif ($path == "/registerSuccess") {
+  $controller = new App\Users\UserController();
+  $controller->registeredSuccess();
 }
 
 ?>
