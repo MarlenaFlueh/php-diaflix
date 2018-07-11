@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="style.css">
   <title>diaflix</title>
 </head>
 
 <body class="LandingPage">
   <header>
     <nav>
-      <a href="index.php"><img src="img/diaflix.png" alt="diaflix" class="Nav-Brand"></a>
+      <a href="index"><img src="img/diaflix.png" alt="diaflix" class="Nav-Brand"></a>
     </nav>
   </header>
   <main class="LandingPage">
@@ -29,7 +29,7 @@
             <input type="password" name="your password" placeholder="password" class="InputElement">
           </div>
           <div class="FinalLogin">
-            <a href="entries.php">
+            <a href="entries">
               Einloggen
             </a>
           </div>

@@ -5,16 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="style.css">
   <title>diaflix</title>
 </head>
 
 <body class="LandingPage">
   <header>
     <nav>
-      <a href="index.php"><img src="img/diaflix.png" alt="diaflix" class="Nav-Brand"></a>
+      <a href="index"><img src="img/diaflix.png" alt="diaflix" class="Nav-Brand"></a>
       <div class="NavigationItem">
-        <a href="login.php">
+        <a href="login">
           Login
         </a>
       </div>
@@ -28,7 +28,7 @@
         <h2 class="CaptionHint">Manage your diary online!</h2>
         <br />
         <p class="RegisterButton">
-          <a href="register.php">
+          <a href="register">
             Register here
           </a>
         </p>
