@@ -20,8 +20,13 @@ class EntryController
 
     public function fetchEntries($pdo)
     {
-        $allEntries = new EntryModel($pdo);
-        $entries = $allEntries->getAllEntries();
+        $model = new EntryModel($pdo);
+        if (isset($_POST['content'])) {
+            $content = $_POST['content'];
+            $title = $_POST['title'];
+            $model->setNewEntry($title, $content);
+        }
+        $entries = $model->getAllEntries();
         $this->render("entries", ['entries' => $entries]);
     }
 
