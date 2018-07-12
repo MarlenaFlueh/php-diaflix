@@ -12,18 +12,29 @@
     </nav>
   </header>
   <main class="LandingPage">
-    <div class="FullDiv">
-      <div>
+    <div class="FlexContainer">
+      <form method="post" action="entries" class="FlexItem">
+        <div>
+          <div>
+            <input type="text" name="title" class="TitleInput" placeholder="title"/>
+          </div>
+          <div>
+            <textarea name="content" class="TextArea">
+            </textarea>
+          </div>
+          <button type="submit" class="SubmitButton">Add</button>
+        </div>
+      </form>
       <?php foreach ($entries as $entry): ?>
-        <h1>
+      <div class="FlexItem">
+        <h1 class="HeadingH1">
           <?php echo $entry["title"]; ?>
         </h1>
-        <p>
+        <p class="NormalFont">
           <?php echo $entry["entry"]; ?>
         </p>
-        <br />
-      <?php endforeach; ?>
       </div>
+      <?php endforeach; ?>
     </div>
   </main>
   <footer></footer>
