@@ -28,10 +28,10 @@
       <?php foreach ($entries as $entry): ?>
       <div class="FlexItem">
         <h1 class="HeadingH1">
-          <?php echo $entry["title"]; ?>
+          <?php echo htmlentities($entry["title"], ENT_QUOTES, 'UTF-8'); ?>
         </h1>
         <p class="NormalFont">
-          <?php echo $entry["entry"]; ?>
+          <?php echo htmlentities($entry["entry"], ENT_QUOTES, 'UTF-8'); ?>
         </p>
       </div>
       <?php endforeach; ?>
