@@ -8,7 +8,7 @@ $path = $_SERVER['PATH_INFO'];
 
 if ($path == "/entries") {
   $controller = new App\Users\LoginController();
- $controller->entryPage($pdo);
+ $controller->checkSessionStatus($pdo);
 } elseif ($path == "/index") {
   $controller = new App\Entries\EntryController();
   $controller->index();
