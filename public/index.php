@@ -12,8 +12,8 @@ if ($path == "/entries") {
   $controller = new App\Entries\EntryController();
   $controller->index();
 } elseif ($path == "/login") {
-  $controller = new App\Users\UserController();
-  $controller->login();
+  $controller = new App\Users\LoginController();
+  $controller->login($pdo);
 } elseif ($path == "/register") {
   $controller = new App\Users\UserController();
   $controller->registered();
