@@ -1,13 +1,14 @@
 <?php
 
+session_start();
 require __DIR__ . "/../database.php";
 require __DIR__ . "/../autoload.php";
 
 $path = $_SERVER['PATH_INFO'];
 
 if ($path == "/entries") {
-  $controller = new App\Entries\EntryController();
- $controller->fetchEntries($pdo);
+  $controller = new App\Users\LoginController();
+ $controller->entryPage($pdo);
 } elseif ($path == "/index") {
   $controller = new App\Entries\EntryController();
   $controller->index();
@@ -20,6 +21,9 @@ if ($path == "/entries") {
 } elseif ($path == "/registerSuccess") {
   $controller = new App\Users\UserController();
   $controller->registeredSuccess();
+} elseif ($path == "/logout") {
+  $controller = new App\Users\LoginController();
+  $controller->logout();
 }
 
 ?>
