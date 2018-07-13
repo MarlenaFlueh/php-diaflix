@@ -5,7 +5,7 @@
     <nav>
       <a href="index"><img src="../../public/img/diaflix.png" alt="diaflix" class="Nav-Brand"></a>
       <div class="NavigationItem">
-        <a href="index">
+        <a href="logout">
           Logout
         </a>
       </div>
