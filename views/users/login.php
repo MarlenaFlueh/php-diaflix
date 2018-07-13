@@ -9,20 +9,25 @@
   <main class="LandingPage">
     <div class="FullDiv">
       <div class="BorderDiv">
-        <form>
+        <?php if (!empty($error)): ?>
+          <p>
+            <?php echo $error; ?>
+          </p>
+        <?php endif; ?>
+        <form method="POST" method="login">
           <div>
             <p class="LoginHeading">Login</p>
           </div>
           <div class="Input">
-            <input type="text" name="your username" placeholder="username" class="InputElement">
+            <input type="text" name="username" placeholder="username" class="InputElement">
           </div>
           <div class="Input">
-            <input type="password" name="your password" placeholder="password" class="InputElement">
+            <input type="password" name="password" placeholder="password" class="InputElement">
           </div>
           <div class="FinalLogin">
-            <a href="entries">
+            <button type="submit" value="login" class="SubmitButton">
               Login
-            </a>
+            </button>
           </div>
         </form>
       </div>
