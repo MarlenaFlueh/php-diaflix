@@ -14,20 +14,19 @@ class LoginController
 
     public function login($pdo)
     {
+       /* var_dump(password_hash("test", PASSWORD_DEFAULT)); */
         $error = null;
         $model = new UserModel($pdo);
-        /* $entryController = new EntryController(); */
         if (!empty($_POST['username']) AND !empty($_POST['password'])) {
             $username = $_POST['username'];
             $password = $_POST['password'];
-            $user = $model->getSingleUser($username, $password);
+            $user = $model->getSingleUser($username);
             if (!empty($user)) {
-                if ($user->password == $password) {
-                   /* $entryController->fetchEntries($pdo); */
+                if (password_verify($password, $user->password)) {
                    echo "Login successful!";
                    die();
                 } else {
-                    $error = "Error, login fail.";
+                    $error = "Incorrect password.";
                 }
             } else {
                 $error = "Ups, login failed...";
