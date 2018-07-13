@@ -9,11 +9,6 @@ class UserController
         include __DIR__ . "/../../views/users/{$view}.php";
     }
 
-    public function login()
-    {
-        $this->render("login");
-    }
-
     public function registered()
     {
         $this->render("register");
