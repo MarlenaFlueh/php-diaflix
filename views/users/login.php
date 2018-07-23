@@ -9,7 +9,7 @@
   <main class="LandingPage">
     <div class="FullDiv">
       <div class="BorderDiv">
-        <?php if (!empty($error)): ?>
+        <?php if (!empty($error)) : ?>
           <p>
             <?php echo $error; ?>
           </p>

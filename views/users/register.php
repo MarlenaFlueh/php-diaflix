@@ -9,15 +9,9 @@
   <main class="LandingPage">
     <div class="FullDiv">
       <div class="BorderDiv">
-        <form>
+        <form method="POST" method="register">
           <div>
             <p class="LoginHeading">Registration</p>
-          </div>
-          <div class="Input">
-            <input type="text" name="prename" placeholder="prename" class="InputElement">
-          </div>
-          <div class="Input">
-            <input type="text" name="name" placeholder="name" class="InputElement">
           </div>
           <div class="Input">
             <input type="text" name="username" placeholder="choose username" class="InputElement">
