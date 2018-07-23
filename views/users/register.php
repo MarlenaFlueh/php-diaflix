@@ -9,6 +9,11 @@
   <main class="LandingPage">
     <div class="FullDiv">
       <div class="BorderDiv">
+      <?php if (!empty($error)) : ?>
+          <p>
+            <?php echo $error; ?>
+          </p>
+        <?php endif; ?>
         <form method="POST" method="register">
           <div>
             <p class="LoginHeading">Registration</p>
@@ -20,16 +25,13 @@
             <input type="password" name="password" placeholder="password" class="InputElement">
           </div>
           <div class="Input">
-            <input type="password" name="password" placeholder="repeat password" class="InputElement">
-          </div>
-          <div class="Input">
             <input type="radio" name="radio">
             <label for="radio">I agree with the conditions</label>
           </div>
           <div class="FinalLogin">
-            <a href="registerSuccess">
+            <button type="submit" value="register" class="SubmitButton">
               Register
-            </a>
+            </button>
           </div>
         </form>
       </div>
