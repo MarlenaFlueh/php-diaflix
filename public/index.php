@@ -8,7 +8,7 @@ $path = $_SERVER['PATH_INFO'];
 
 if ($path == "/entries") {
   $controller = new App\Users\LoginController();
- $controller->checkSessionStatus($pdo);
+  $controller->checkSessionStatus($pdo);
 } elseif ($path == "/index") {
   $controller = new App\Entries\EntryController();
   $controller->index();
@@ -17,7 +17,7 @@ if ($path == "/entries") {
   $controller->login($pdo);
 } elseif ($path == "/register") {
   $controller = new App\Users\UserController();
-  $controller->registered();
+  $controller->registered($pdo);
 } elseif ($path == "/registerSuccess") {
   $controller = new App\Users\UserController();
   $controller->registeredSuccess();

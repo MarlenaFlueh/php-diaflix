@@ -9,14 +9,35 @@ class UserController
         include __DIR__ . "/../../views/users/{$view}.php";
     }
 
-    public function registered()
+    protected function renderParam($view, $parameter)
     {
-        $this->render("register");
+        extract($parameter);
+        include __DIR__ . "/../../views/users/{$view}.php";
     }
 
     public function registeredSuccess()
     {
         $this->render("registerSuccess");
+    }
+
+    public function registered($pdo)
+    {
+        $error = null;
+        $model = new UserModel($pdo);
+        if (!empty($_POST['username']) and !empty($_POST['password'])) {
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $model->newUser($username, $password);
+            $user = $model->getSingleUser($username);
+            if (!empty($user)) {
+                header("Location: registerSuccess");
+            } else {
+                $error = "Ups, auth failed...";
+            }
+        }
+        $this->renderParam('register', [
+            'error' => $error
+        ]);
     }
 }
 
