@@ -3,15 +3,10 @@
 namespace App\Users;
 
 use PDO;
+use App\Core\AbstractModel;
 
-class UserModel
+class UserModel extends AbstractModel
 {
-    private $pdo;
-    public function __construct(PDO $pdo)
-    {
-        $this->pdo = $pdo;
-    }
-
     public function getSingleUser($username)
     {
         $stmt = $this->pdo->prepare("SELECT `username`, `password` FROM `users` WHERE username = :username");
@@ -20,7 +15,7 @@ class UserModel
         return $user;
     }
 
-    public function newUser($username, $password)
+    public function fetchNewUser($username, $password)
     {
         $stmt = $this->pdo->prepare("INSERT INTO `users` (`username`, `password`) VALUES (:username, :password)");
         $stmt->execute([

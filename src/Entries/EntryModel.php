@@ -3,15 +3,10 @@
 namespace App\Entries;
 
 use PDO;
+use App\Core\AbstractModel;
 
-class EntryModel
+class EntryModel extends AbstractModel
 {
-    private $pdo;
-    public function __construct(PDO $pdo)
-    {
-        $this->pdo = $pdo;
-    }
-
     public function setNewEntry($title, $entry)
     {
         $stmt = $this->pdo->prepare(
