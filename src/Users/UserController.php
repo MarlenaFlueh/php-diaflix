@@ -27,12 +27,12 @@ class UserController
         if (!empty($_POST['username']) and !empty($_POST['password'])) {
             $username = $_POST['username'];
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            $model->newUser($username, $password);
             $user = $model->getSingleUser($username);
-            if (!empty($user)) {
+            if (empty($user)) {
+                $model->newUser($username, $password);
                 header("Location: registerSuccess");
             } else {
-                $error = "Ups, auth failed...";
+                $error = "Username already exists.";
             }
         }
         $this->renderParam('register', [
