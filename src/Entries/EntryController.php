@@ -2,22 +2,10 @@
 
 namespace App\Entries;
 
-class EntryController
+use App\Core\AbstractController;
+
+class EntryController extends AbstractController
 {
-    protected function render($view, $parameter)
-    {
-        foreach ($parameter as $key => $value) {
-            ${$key} = $value;
-        }
-
-        include __DIR__ . "/../../views/entries/{$view}.php";
-    }
-
-    protected function renderSite($view)
-    {
-        include __DIR__ . "/../../views/entries/{$view}.php";
-    }
-
     public function fetchEntries($pdo)
     {
         $model = new EntryModel($pdo);
@@ -27,11 +15,11 @@ class EntryController
             $model->setNewEntry($title, $content);
         }
         $entries = $model->getAllEntries();
-        $this->render("entries", ['entries' => $entries]);
+        $this->renderParam("entries/entries", ['entries' => $entries]);
     }
 
     public function index()
     {
-        $this->renderSite("index");
+        $this->render("entries/index");
     }
 }

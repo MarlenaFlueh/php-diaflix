@@ -2,22 +2,13 @@
 
 namespace App\Users;
 
-class UserController
+use App\Core\AbstractController;
+
+class UserController extends AbstractController
 {
-    protected function render($view)
-    {
-        include __DIR__ . "/../../views/users/{$view}.php";
-    }
-
-    protected function renderParam($view, $parameter)
-    {
-        extract($parameter);
-        include __DIR__ . "/../../views/users/{$view}.php";
-    }
-
     public function registeredSuccess()
     {
-        $this->render("registerSuccess");
+        $this->render('users/registerSuccess');
     }
 
     public function registered($pdo)
@@ -29,13 +20,13 @@ class UserController
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $user = $model->getSingleUser($username);
             if (empty($user)) {
-                $model->newUser($username, $password);
+                $model->fetchNewUser($username, $password);
                 header("Location: registerSuccess");
             } else {
                 $error = "Username already exists.";
             }
         }
-        $this->renderParam('register', [
+        $this->renderParam('users/register', [
             'error' => $error
         ]);
     }
