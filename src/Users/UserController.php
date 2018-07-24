@@ -26,7 +26,7 @@ class UserController
         $model = new UserModel($pdo);
         if (!empty($_POST['username']) and !empty($_POST['password'])) {
             $username = $_POST['username'];
-            $password = $_POST['password'];
+            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $model->newUser($username, $password);
             $user = $model->getSingleUser($username);
             if (!empty($user)) {
