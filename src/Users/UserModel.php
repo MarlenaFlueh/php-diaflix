@@ -9,7 +9,7 @@ class UserModel extends AbstractModel
 {
     public function getSingleUser($username)
     {
-        $stmt = $this->pdo->prepare("SELECT `username`, `password` FROM `users` WHERE username = :username");
+        $stmt = $this->pdo->prepare("SELECT `id`, `username`, `password` FROM `users` WHERE username = :username");
         $stmt->execute(['username' => $username]);
         $user = $stmt->fetch(PDO::FETCH_OBJ);
         return $user;

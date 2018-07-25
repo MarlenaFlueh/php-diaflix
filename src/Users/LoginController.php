@@ -36,6 +36,7 @@ class LoginController extends AbstractController
             if (!empty($user)) {
                 if (password_verify($password, $user->password)) {
                     $_SESSION['login'] = $user->username;
+                    $_SESSION['userid'] = $user->id;
                     session_regenerate_id(true);
                     header("Location: entries");
                 } else {

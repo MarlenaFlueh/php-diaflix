@@ -19,8 +19,10 @@ class EntryModel extends AbstractModel
         ]);
     }
 
-    public function getAllEntries()
+    public function getFilteredEntries($userid)
     {
-        return $this->pdo->query("SELECT * FROM `entries`");
+        $stmt = $this->pdo->prepare("SELECT * FROM `entries` WHERE user_id = :userid");
+        $stmt->execute(['userid' => $userid]);
+        return $stmt;
     }
 }

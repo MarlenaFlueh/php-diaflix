@@ -14,7 +14,7 @@ class EntryController extends AbstractController
             $title = $_POST['title'];
             $model->setNewEntry($title, $content);
         }
-        $entries = $model->getAllEntries();
+        $entries = $model->getFilteredEntries($_SESSION['userid']);
         $this->renderParam("entries/entries", ['entries' => $entries]);
     }
 
