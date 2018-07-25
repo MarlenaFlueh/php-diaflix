@@ -6,7 +6,7 @@ use PDO;
 
 class AbstractModel
 {
-    private $pdo;
+    public $pdo;
     public function __construct(PDO $pdo)
     {
         $this->pdo = $pdo;
