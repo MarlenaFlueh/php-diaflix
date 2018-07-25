@@ -3,15 +3,10 @@
 namespace App\Users;
 
 use App\Entries\EntryController;
+use App\Core\AbstractController;
 
-class LoginController
+class LoginController extends AbstractController
 {
-    protected function render($view, $parameter)
-    {
-        extract($parameter);
-        include __DIR__ . "/../../views/users/{$view}.php";
-    }
-
     public function checkSessionStatus($pdo)
     {
         if (isset($_SESSION['login'])) {
@@ -34,7 +29,7 @@ class LoginController
        /* var_dump(password_hash("test", PASSWORD_DEFAULT)); test-username: Merle */
         $error = null;
         $model = new UserModel($pdo);
-        if (!empty($_POST['username']) AND !empty($_POST['password'])) {
+        if (!empty($_POST['username']) and !empty($_POST['password'])) {
             $username = $_POST['username'];
             $password = $_POST['password'];
             $user = $model->getSingleUser($username);
@@ -42,7 +37,7 @@ class LoginController
                 if (password_verify($password, $user->password)) {
                     $_SESSION['login'] = $user->username;
                     session_regenerate_id(true);
-                   header("Location: entries");
+                    header("Location: entries");
                 } else {
                     $error = "Incorrect password.";
                 }
@@ -50,7 +45,7 @@ class LoginController
                 $error = "Ups, login failed...";
             }
         }
-        $this->render("login", [
+        $this->renderParam("users/login", [
             'error' => $error
         ]);
     }
