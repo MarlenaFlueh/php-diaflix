@@ -15,7 +15,7 @@ class UserController extends AbstractController
     {
         $error = null;
         $model = new UserModel($pdo);
-        if (!empty($_POST['username']) and !empty($_POST['password'])) {
+        if ($this->checkInput()) {
             $username = $_POST['username'];
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             $user = $model->getSingleUser($username);

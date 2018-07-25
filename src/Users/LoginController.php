@@ -24,12 +24,12 @@ class LoginController extends AbstractController
         header("Location: index");
     }
 
+    /* var_dump(password_hash("test", PASSWORD_DEFAULT)); test-username: Merle */
     public function login($pdo)
     {
-       /* var_dump(password_hash("test", PASSWORD_DEFAULT)); test-username: Merle */
         $error = null;
         $model = new UserModel($pdo);
-        if (!empty($_POST['username']) and !empty($_POST['password'])) {
+        if ($this->checkInput()) {
             $username = $_POST['username'];
             $password = $_POST['password'];
             $user = $model->getSingleUser($username);
