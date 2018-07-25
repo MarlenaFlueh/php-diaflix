@@ -7,13 +7,13 @@ use App\Core\AbstractModel;
 
 class EntryModel extends AbstractModel
 {
-    public function setNewEntry($title, $entry)
+    public function setNewEntry($userid, $title, $entry)
     {
         $stmt = $this->pdo->prepare(
             "INSERT INTO `entries` (`user_id`, `title`, `entry`) VALUES (:user_id, :title, :entry)"
         );
         $stmt->execute([
-            'user_id' => 1,
+            'user_id' => $userid,
             'title' => $title,
             'entry' => $entry
         ]);

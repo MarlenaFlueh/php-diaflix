@@ -10,9 +10,10 @@ class EntryController extends AbstractController
     {
         $model = new EntryModel($pdo);
         if (isset($_POST['content'])) {
+            $userid = $_SESSION['userid'];
             $content = $_POST['content'];
             $title = $_POST['title'];
-            $model->setNewEntry($title, $content);
+            $model->setNewEntry($userid, $title, $content);
         }
         $entries = $model->getFilteredEntries($_SESSION['userid']);
         $this->renderParam("entries/entries", ['entries' => $entries]);
